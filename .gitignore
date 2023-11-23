@@ -1,0 +1,6 @@
+data/
+docker_config_files/
+test_docker_config/
+env/
+mymap/db.sqlite3
+.idea/

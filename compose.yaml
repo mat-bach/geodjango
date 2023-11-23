@@ -1,0 +1,12 @@
+services:
+  web:
+    build: .
+    tty: true
+    command: >
+        bash -c "python ./mymap/manage.py migrate
+        && python ./mymap/manage.py runserver 0.0.0.0:8000"
+    restart: always
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
