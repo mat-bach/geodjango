@@ -1,4 +1,15 @@
 services:
+
+  db:
+    image: postgres:15.3
+    restart: always
+    volumes:
+      - ./data/db:/var/lib/postgres/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
   web:
     build: .
     tty: true
@@ -8,5 +19,9 @@ services:
     restart: always
     volumes:
       - .:/code
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     ports:
       - "8000:8000"

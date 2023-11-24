@@ -4,7 +4,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 RUN apt-get update &&\
-    apt-get install -y binutils libproj-dev gdal-bin
+    apt-get install -y binutils libproj-dev gdal-bin libpq-dev
 
 WORKDIR /code
 
