@@ -1,9 +1,13 @@
 services:
 
   db:
-    image: postgres:15.3
+    container_name: db
+    build:
+      context: .
+      dockerfile: Dockerfile-db
     restart: always
     volumes:
+      - ./db:/docker-entrypoint-initdb.d/
       - ./data/db:/var/lib/postgres/data
     environment:
       - POSTGRES_DB=postgres
