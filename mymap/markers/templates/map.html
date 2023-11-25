@@ -8,6 +8,8 @@
         <script src="//unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     </head>
     <body>
+        <div id="menu">
+        </div>
         {{ markers|json_script:"markers-data" }}
         <div id="map"></div>
         <script src="{% static 'map.js' %}"></script>
