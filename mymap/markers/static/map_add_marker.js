@@ -48,7 +48,7 @@ function onMapClick(e) {
         body:
             JSON.stringify({
             "name": "test_js",
-            "location": "SRID=4326;POINT(13 13)"
+            "location": `SRID=4326;POINT(${e.latlng.lng} ${e.latlng.lat})`
         }),
         headers: {
             'Content-type': 'application/json',
