@@ -25,8 +25,23 @@ async function render_markers() {
 
 map.on('moveend', render_markers)
 
+function getCookie(name) {
+  if (!document.cookie) {
+    return null;
+  }
+
+  const xsrfCookies = document.cookie.split(';')
+    .map(c => c.trim())
+    .filter(c => c.startsWith(name + '='));
+
+  if (xsrfCookies.length === 0) {
+    return null;
+  }
+  return decodeURIComponent(xsrfCookies[0].split('=')[1]);
+}
+
 function onMapClick(e) {
-    var csrftoken = document.cookie.('csrftoken');
+    const csrf_token = getCookie('CSRF-TOKEN');
     var marker = new L.marker(e.latlng).addTo(map);
     fetch('create-marker/', {
         method: 'POST',
