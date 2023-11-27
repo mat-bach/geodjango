@@ -14,7 +14,7 @@ server {
 
 server {
     listen 443 ssl;
-    ssl_certificate      /code/mymap/ssl/matbach.crt;
+    ssl_certificate      /code/mymap/ssl/matbach.pem;
     ssl_certificate_key  /code/mymap/ssl/matbach.key;
     server_name *.matbach.pl;
     error_log    stderr warn;
