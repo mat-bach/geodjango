@@ -9,6 +9,9 @@
     </head>
     <body>
         <div id="menu">
+            <form action="{% url 'markers:map' %}">
+                <input type="submit" value="Return to map view" id="menu-button" />
+            </form>
         </div>
         {{ markers|json_script:"markers-data" }}
         <div id="map"></div>

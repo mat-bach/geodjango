@@ -12,6 +12,13 @@ class MarkersAddView(TemplateView):
     template_name = 'add_marker.html'
 
 
+# New marker
 class MarkerCreateView(generics.CreateAPIView):
+    queryset = Marker.objects.all()
+    serializer_class = MarkerSerializer
+
+
+# Marker list
+class MarkerListView(generics.ListAPIView):
     queryset = Marker.objects.all()
     serializer_class = MarkerSerializer

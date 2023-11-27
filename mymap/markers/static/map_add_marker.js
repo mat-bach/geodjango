@@ -1,3 +1,5 @@
+document.getElementById("map").style.cursor = "crosshair";
+
 function getCookie(name) {
   if (!document.cookie) {
     return null;

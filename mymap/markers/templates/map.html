@@ -9,7 +9,12 @@
     </head>
     <body>
         <div id="menu">
-            <a href="{% url 'markers:add_marker' %}">Add new marker to the map</a>
+            <form action="{% url 'markers:add_marker' %}">
+                <input type="submit" value="Add new marker to the map" class="menu-button" />
+            </form>
+            <form action="{% url 'markers:marker-list' %}">
+                <input type="submit" value="Marker list" class="menu-button" />
+            </form>
         </div>
         {{ markers|json_script:"markers-data" }}
         <div id="map"></div>
