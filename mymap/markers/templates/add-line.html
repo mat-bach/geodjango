@@ -9,21 +9,13 @@
     </head>
     <body>
         <div id="menu">
-            <form action="{% url 'markers:add_marker' %}">
-                <input type="submit" value="Add new marker to the map" class="menu-button" />
-            </form>
-            <form action="{% url 'markers:marker-list' %}">
-                <input type="submit" value="Marker list" class="menu-button" />
-            </form>
-            <form action="{% url 'markers:add-line' %}">
-                <input type="submit" value="Add new line to the map" class="menu-button" />
-            </form>
-            <form action="{% url 'markers:line-list' %}">
-                <input type="submit" value="Line list" class="menu-button" />
+            <form action="{% url 'markers:map' %}">
+                <input type="submit" value="Return to map view" id="menu-button" />
             </form>
         </div>
         {{ markers|json_script:"markers-data" }}
         <div id="map"></div>
         <script src="{% static 'map.js' %}"></script>
+        <script src="{% static 'map_add_line.js' %}"></script>
     </body>
 </html>

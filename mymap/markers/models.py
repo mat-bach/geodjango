@@ -8,3 +8,8 @@ class Marker(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Line(models.Model):
+    name = models.CharField(max_length=255)
+    location = models.LineStringField()

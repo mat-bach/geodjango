@@ -1,5 +1,5 @@
 from rest_framework_gis import serializers
-from .models import Marker
+from .models import Marker, Line
 
 
 class MarkerSerializer(serializers.GeoFeatureModelSerializer):
@@ -8,4 +8,11 @@ class MarkerSerializer(serializers.GeoFeatureModelSerializer):
         fields = ['id', 'name']
         geo_field = 'location'
         model = Marker
-        
+
+
+class LineSerializer(serializers.GeoFeatureModelSerializer):
+
+    class Meta:
+        fields = ['id', 'name']
+        geo_field = 'location'
+        model = Line

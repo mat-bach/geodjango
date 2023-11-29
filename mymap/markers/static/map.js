@@ -23,4 +23,19 @@ async function render_markers() {
       .addTo(map);
 }
 
+async function load_lines() {
+    const lines_url = `/markers/map/line-list/?in_bbox=${map.getBounds().toBBoxString()}`;
+    const response = await fetch(lines_url);
+    const geoJSON = await response.json();
+    return geoJSON
+}
+
+async function render_lines() {
+    const lines = await load_lines();
+    L.geoJSON(lines)
+      .bindPopup((layer) => layer.feature.properties.name)
+      .addTo(map);
+}
+
 map.on('moveend', render_markers)
+map.on('moveend', render_lines)
