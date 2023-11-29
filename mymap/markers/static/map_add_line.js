@@ -15,7 +15,7 @@ function getCookie(name) {
   return decodeURIComponent(xsrfCookies[0].split('=')[1]);
 }
 
-const csrf_token = getCookie('CSRF-TOKEN');
+const csrf_token = getCookie('csrftoken');
 var name;
 
 function name_prompt() {
