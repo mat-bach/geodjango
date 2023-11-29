@@ -24,6 +24,7 @@ services:
     volumes:
       - .:/code
     environment:
+      - DJANGO_SETTINGS_MODULE=mymap.settings.local
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
